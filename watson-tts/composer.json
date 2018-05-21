@@ -1,0 +1,23 @@
+{
+    "name": "tbetool/watson-tts",
+    "type": "library",
+    "description": "Based on IBM Watson. Text to Speech serializer",
+    "keywords": ["ibm", "watson", "ibm watson", "text to speech", "watson text to speech", "ibm watson text to speech",
+        "ibm watson tts serializer", "ibm watson tts", "ibm watson text to speech serializer", "watson tts", "watson tts php",
+        "watson text to speech php library", "Anuj Sharma", "TBE", "Anuj TBE"],
+    "homepage": "http://thebornenginner.com",
+    "authors": [
+        {
+            "name": "Anuj Sharma",
+            "email": "anuj@thebornengineer.com",
+            "homepage": "https://anujsh.gitlab.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5"
+    },
+    "autoload": {
+        "psr-4": {"TBETool\\": "src/"}
+    }
+}
