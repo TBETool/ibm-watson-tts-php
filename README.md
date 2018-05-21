@@ -4,6 +4,7 @@ Convert written text into natural-sounding audio in a variety of languages and v
 This package use [IBM Watson Text To Speech](https://www.ibm.com/watson/services/text-to-speech/) service.
 
 ### Using the Library
+
 ---
 
 #### Installation
@@ -41,6 +42,9 @@ $file = $watson->tts('Hello World');
 This will return the absolute path of the file created if text to speech conversion is successful, otherwise will throw Exception.
 
 ### Exception handling
+
+---
+
 Every function throws an Exception in case of any error/issue. Bind the code block within `try-catch` block to catch any exception occurred.
 
 _Ex:_
@@ -55,6 +59,9 @@ will throw and exception `Not a valid audio format. Allowed formats: wav, ogg` a
 
 
 ### Other callable methods
+
+---
+
 ##### Set Audio Format
 ```
 $watson->setAudioFormat('wav');
@@ -75,13 +82,21 @@ _allowed voices:_ `US_MichaelVoice`
 _default:_ `US_MichaelVoice`
 
 ### Bug Reporting
+
+---
+
 If you found any bug, create an [issue](https://github.com/TBETool/ibm-watson-tts-php/issues/new).
 
 ### Support and Contribution
+
+---
+
 Something is missing? 
 * `Fork` the repositroy
 * Make your contribution
 * make a `pull request`
 
 ### Developer
+
+---
 * [Anuj Sharma](https://anujsh.gitlab.io)
