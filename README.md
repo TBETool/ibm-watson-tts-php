@@ -4,6 +4,9 @@ Convert written text into natural-sounding audio in a variety of languages and v
 This package use [IBM Watson Text To Speech](https://www.ibm.com/watson/services/text-to-speech/) service.
 
 ### Using the Library
+
+---
+
 #### Installation
 
 Intall library in PHP project using composer
@@ -12,6 +15,7 @@ composer require tbetool/ibm-watson-tts
 ```
 
 #### Using Library
+
 After installing the library, create `WatsonTts` object
 ```
 $watson = new WatsonTts(
