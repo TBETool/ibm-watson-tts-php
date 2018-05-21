@@ -37,6 +37,20 @@ $file = $watson->tts('Hello World');
 ```
 This will return the absolute path of the file created if text to speech conversion is successful, otherwise will throw Exception.
 
+### Exception handling
+Every function throws an Exception in case of any error/issue. Bind the code block within `try-catch` block to catch any exception occurred.
+
+_Ex:_
+```
+try {
+    $watson->setAudioFormat('mp3');
+} catch (Exception $exception) {
+    echo $exception->getMessage();
+}
+```
+will throw and exception `Not a valid audio format. Allowed formats: wav, ogg` as `mp3` audio format is not supported as of now
+
+
 ### Other callable methods
 ##### Set Audio Format
 ```
