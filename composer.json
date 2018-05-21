@@ -1,5 +1,5 @@
 {
-    "name": "tbetool/watson-tts",
+    "name": "tbetool/ibm-watson-tts",
     "type": "library",
     "description": "Based on IBM Watson. Text to Speech serializer",
     "keywords": ["ibm", "watson", "ibm watson", "text to speech", "watson text to speech", "ibm watson text to speech",
