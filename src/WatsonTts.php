@@ -186,7 +186,11 @@ class WatsonTts
 
         $this->prepareOutputFile();
 
-        $this->processWatsonTtsCurl();
+        try {
+            return $this->processWatsonTtsCurl();
+        } catch (Exception $exception) {
+            throw new Exception($exception->getMessage());
+        }
     }
 
     /**
@@ -233,10 +237,19 @@ class WatsonTts
             throw new Exception('Error with curl response: '.curl_error($ch));
         }
         curl_close($ch);
+        fclose($output_file);
 
-        print_r($result);
+        if ($result && is_file($this->output_file_path))
+            return $this->output_file_path;
+
+        throw new Exception('Error creating file');
     }
 
+    /**
+     * prepare watson url to append /v1/synthesize if not provided
+     *
+     * @param $watson_url
+     */
     private function _prepareWatsonUrl($watson_url)
     {
         $trim_url = rtrim($watson_url, '/');
