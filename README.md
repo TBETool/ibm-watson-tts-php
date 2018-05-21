@@ -42,23 +42,23 @@ This will return the absolute path of the file created if text to speech convers
 ```
 $watson->setAudioFormat('wav');
 ```
-**allowed formats:** `wav`, `ogg`  
-**Default:** `wav`
+_allowed formats:_ `wav`, `ogg`  
+_default:_ `wav`
 ##### Set Language
 ```
 $watson->setLanguage('en');
 ```
-**allowed languages:** `en`  
-**default:** `en`
+_allowed languages:_ `en`  
+_default:_ `en`
 ##### Set Voice
 ```
 $watson->setVoice('US_MichaelVoice');
 ``` 
-**allowed voices:** `US_MichaelVoice`  
-**default:** `US_MichaelVoice`
+_allowed voices:_ `US_MichaelVoice`  
+_default:_ `US_MichaelVoice`
 
 ### Bug Reporting
-If you found any bug, create an [issue]().
+If you found any bug, create an [issue](https://github.com/TBETool/ibm-watson-tts-php/issues/new).
 
 ### Support and Contribution
 Something is missing? 
