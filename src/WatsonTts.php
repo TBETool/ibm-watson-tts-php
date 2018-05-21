@@ -43,7 +43,7 @@ class WatsonTts
         $this->WATSON_PASSWORD = $watson_password;
 
         if (!empty($watson_url)) {
-            $this->WATSON_URL = $watson_url;
+            $this->_prepareWatsonUrl($watson_url);
         }
     }
 
@@ -214,6 +214,8 @@ class WatsonTts
 
         $text_json = json_encode($text_data);
 
+        $output_file = fopen($this->output_file_path, 'w');
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->WATSON_URL);
         curl_setopt($ch, CURLOPT_USERPWD, $this->WATSON_USERNAME.':'.$this->WATSON_PASSWORD);
@@ -224,6 +226,7 @@ class WatsonTts
             'Accept: audio/'.$this->audio_format,
         ]);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $text_json);
+        curl_setopt($ch, CURLOPT_FILE, $output_file);
 
         $result = curl_exec($ch);
         if (curl_errno($ch)) {
@@ -232,6 +235,16 @@ class WatsonTts
         curl_close($ch);
 
         print_r($result);
+    }
+
+    private function _prepareWatsonUrl($watson_url)
+    {
+        $trim_url = rtrim($watson_url, '/');
+
+        if (strpos($trim_url, '/v1/synthesize') !== false)
+            $this->WATSON_URL = $trim_url;
+        else
+            $this->WATSON_URL = rtrim($watson_url, '/').'/v1/synthesize';
     }
 
 }
