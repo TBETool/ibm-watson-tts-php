@@ -4,7 +4,6 @@ Convert written text into natural-sounding audio in a variety of languages and v
 This package use [IBM Watson Text To Speech](https://www.ibm.com/watson/services/text-to-speech/) service.
 
 ### Using the Library
-
 ---
 
 #### Installation
