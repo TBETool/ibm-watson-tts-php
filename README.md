@@ -68,14 +68,14 @@ _default:_ `wav`
 ```
 $watson->setLanguage('en');
 ```
-_allowed languages:_ `en`  
-_default:_ `en`
+_allowed languages:_ [See List](#supported-language-and-voice-list)  
+_default:_ `en-US`
 ##### Set Voice
 ```
 $watson->setVoice('US_MichaelVoice');
 ``` 
-_allowed voices:_ `US_MichaelVoice`  
-_default:_ `US_MichaelVoice`
+_allowed voices:_ [See List](#supported-language-and-voice-list)  
+_default:_ `MichaelVoice`
 
 ---
 ### Supported language and voice list
