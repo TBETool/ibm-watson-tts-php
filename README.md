@@ -78,6 +78,27 @@ _allowed voices:_ `US_MichaelVoice`
 _default:_ `US_MichaelVoice`
 
 ---
+### supported language and voice list
+list of supported language and voice strings
+
+Name | language | voice | gender | description
+--- | --- | --- | --- | ---
+es-LA_SofiaVoice | es-LA | SofiaVoice | female | Sofia: Latin American Spanish (español latinoamericano) female voice.
+pt-BR_IsabelaVoice | pt-BR | IsabelaVoice | female | Isabela: Brazilian Portuguese (português brasileiro) female voice.
+en-GB_KateVoice | en-GB | KateVoice | female | Kate: British English female voice.
+de-DE_BirgitVoice | de-DE | BirgitVoice | female | Birgit: Standard German of Germany (Standarddeutsch) female voice.
+en-US_AllisonVoice | en-US | AllisonVoice | female | Allison: American English female voice.
+fr-FR_ReneeVoice | fr-FR | ReneeVoice | female | Renee: French (français) female voice.
+it-IT_FrancescaVoice | it-IT | FrancescaVoice | female | Francesca: Italian (italiano) female voice.
+es-ES_LauraVoice | es-ES | LauraVoice | female | Laura: Castilian Spanish (español castellano) female voice.
+ja-JP_EmiVoice | ja-JP | EmiVoice | female | Emi: Japanese (日本語) female voice.
+es-ES_EnriqueVoice | es-ES | EnriqueVoice | male | Enrique: Castilian Spanish (español castellano) male voice.
+de-DE_DieterVoice | de-DE | DieterVoice | male | Dieter: Standard German of Germany (Standarddeutsch) male voice.
+en-US_LisaVoice | en-US | LisaVoice | female | Lisa: American English female voice.
+en-US_MichaelVoice | en-US | MichaelVoice | male | Michael: American English male voice.
+es-US_SofiaVoice | es-US | SofiaVoice | female | Sofia: North American Spanish (español norteamericano) female voice.
+
+---
 ### Bug Reporting
 
 If you found any bug, create an [issue](https://github.com/TBETool/ibm-watson-tts-php/issues/new).

@@ -20,14 +20,23 @@ class WatsonTts
     private $WATSON_URL;
     private $valid_audio_formats = ['ogg', 'wav'];
     private $audio_format = 'wav';
-    private $valid_language = ['en'];
-    private $language = 'en';
-    private $valid_voices = ['US_MichaelVoice'];
-    private $voice = 'US_MichaelVoice';
+    private $valid_language = [
+        'en-US', 'es-LA', 'pt-BR', 'en-GB', 'de-DE', 'fr-FR',
+        'it-IT', 'es-ES', 'ja-JP', 'es-ES', 'de-DE'
+    ];
+    private $language = 'en-US';
+    private $valid_voices = [
+        'MichaelVoice', 'SofiaVoice', 'IsabelaVoice', 'KateVoice',
+        'BirgitVoice', 'AllisonVoice', 'ReneeVoice', 'FrancescaVoice',
+        'LauraVoice', 'EmiVoice', 'EnriqueVoice', 'DieterVoice',
+        'LisaVoice', 'SofiaVoice'
+    ];
+    private $voice = 'MichaelVoice';
     private $output_path;
     private $output_file_name;
     private $output_file_path;
     private $text;
+    private $use_voice;
 
     /**
      * WatsonTts constructor.
@@ -215,13 +224,18 @@ class WatsonTts
         $text_data = [
             'text' => $this->text
         ];
-
         $text_json = json_encode($text_data);
 
         $output_file = fopen($this->output_file_path, 'w');
 
+        # prepare voice
+        $this->_prepareVoice();
+
+        # url with voice
+        $url = $this->WATSON_URL.'?voice='.$this->use_voice;
+
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $this->WATSON_URL);
+        curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_USERPWD, $this->WATSON_USERNAME.':'.$this->WATSON_PASSWORD);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POST, true);
@@ -258,6 +272,14 @@ class WatsonTts
             $this->WATSON_URL = $trim_url;
         else
             $this->WATSON_URL = rtrim($watson_url, '/').'/v1/synthesize';
+    }
+
+    /**
+     * prepare voice to use
+     */
+    private function _prepareVoice()
+    {
+        $this->use_voice = $this->language.'_'.$this->voice;
     }
 
 }
