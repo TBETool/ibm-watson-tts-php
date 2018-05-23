@@ -66,13 +66,13 @@ _allowed formats:_ `wav`, `ogg`
 _default:_ `wav`
 ##### Set Language
 ```
-$watson->setLanguage('en');
+$watson->setLanguage('en-US');
 ```
-_allowed languages:_ [See List](#supported-language-and-voice-list)  
+_allowed languages:_ [See List](#supported-language-and-voice-list)  
 _default:_ `en-US`
 ##### Set Voice
 ```
-$watson->setVoice('US_MichaelVoice');
+$watson->setVoice('MichaelVoice');
 ``` 
 _allowed voices:_ [See List](#supported-language-and-voice-list)  
 _default:_ `MichaelVoice`
