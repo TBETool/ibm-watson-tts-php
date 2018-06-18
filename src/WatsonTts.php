@@ -253,6 +253,25 @@ class WatsonTts
         curl_close($ch);
         fclose($output_file);
 
+        if (filesize($this->output_file_path) < 1000) {
+            //
+            // probably there is an error and error string is saved to file,
+            // open file and read the string
+            // if error key exists in the string, delete generated file and throw exception
+            //
+            $content = file_get_contents($this->output_file_path);
+
+            $debug_content = json_decode($content);
+
+            if (key_exists('error', $debug_content)) {
+                // deleted file created, because it is currupt
+                unlink($this->output_file_path);
+                // throw exception of the returned error
+                throw new Exception($debug_content->description, $debug_content->code);
+            }
+
+        }
+
         if ($result && is_file($this->output_file_path))
             return $this->output_file_path;
 
