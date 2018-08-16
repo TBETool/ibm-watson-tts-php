@@ -111,6 +111,3 @@ Something is missing?
 * Make your contribution
 * make a `pull request`
 
----
-### Developer
-* [Anuj Sharma](https://anujsh.gitlab.io)
